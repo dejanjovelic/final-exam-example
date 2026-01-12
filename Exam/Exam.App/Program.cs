@@ -1,5 +1,6 @@
 using Exam.App;
 using Exam.App.Controllers.Middleware;
+using Exam.App.Infrastructure;
 using Exam.App.Infrastructure.Database;
 using Exam.App.Services;
 using Exam.App.Services.Mappers;
@@ -21,6 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Service and Repository Dependency Injection
 builder.Services.AddScoped<IAuthService, AuthService>();
+//UnitOfWork service registration
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 
